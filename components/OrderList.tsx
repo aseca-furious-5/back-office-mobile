@@ -19,7 +19,7 @@ type OrderListProps = {
 
 export function OrderList({orders}: OrderListProps) {
 
-    return (
+    return orders ? (
         <View style={styles.container}>
             {orders.map((order) => (
                 <View key={order.id}>
@@ -35,7 +35,7 @@ export function OrderList({orders}: OrderListProps) {
                 </View>
             ))}
         </View>
-    );
+    ) : <></>;
 }
 
 const styles = StyleSheet.create({
